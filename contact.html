@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect - R. V. Meaddows</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-logo">R. V. Meaddows</div>
+  <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+<!-- Hero -->
+<header class="hero contact-hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Connect</h1>
+    <p class="hero-subtitle">Stay in touch with R. V. Meaddows</p>
+  </div>
+</header>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <p>
+    Thank you for visiting. You can follow along for updates and behind‑the‑scenes notes, or reach out directly.
+  </p>
+
+  <!-- Instagram Link -->
+  <div class="contact-item">
+    <a href="https://instagram.com/rvmeaddows" target="_blank" class="contact-link">
+      <img src="images/image.png" alt="Instagram Icon" class="insta-icon" class="contact-icon">
+      <span>Follow on Instagram</span>
+    </a>
+  </div>
+
+
+<form id="contactForm" class="custom-form">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="entry.243698491" placeholder="Your name (optional)">
+  <hr>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="entry.1098984572" placeholder="Type your message here..." required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+<div id="thankYouPopup" class="popup">
+  <p>✨ Thank you! Your message has been sent. ✨</p>
+</div>
+
+
+
+
+ 
+
+  <!-- Email Link -->
+  <div class="contact-item">
+    <a href="mailto:yourname@example.com" class="contact-link">
+      <span>Email: yourname@example.com</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 R. V. Meaddows. All rights reserved.</p>
+</footer>
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop the browser redirect
+
+  const formData = new FormData(this);
+
+  fetch("https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse", {
+    method: "POST",
+    body: formData,
+    mode: "no-cors" // required for Google Forms
+  }).then(() => {
+    // Show thank-you popup
+    document.getElementById("thankYouPopup").style.display = "block";
+
+    // Clear the form
+    this.reset();
+  });
+});
+</script>
+
+
+</body>
+</html>
